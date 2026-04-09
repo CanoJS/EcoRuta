@@ -1,14 +1,15 @@
-import { useState } from "react";
+
 import Header from "../components/Header";
 import AcopioList from "../components/AcopioList";
 import ReciclajeForm from "../components/ReciclajeForm";
 
 type Props = {
   setPage: (page: string) => void;
+  puntos: number;
+  setPuntos: (puntos: number) => void;
 };
 
-function Dashboard({ setPage }: Props) {
-  const [puntos, setPuntos] = useState(0);
+function Dashboard({ setPage, puntos, setPuntos }: Props) {
 
   return (
     <div>
