@@ -38,7 +38,6 @@ function ReciclajeForm({ puntos, setPuntos }: Props) {
         <input 
           type="file" 
           accept="image/*" 
-          capture="environment" // Esto activa la cámara trasera en dispositivos móviles
           onChange={(e) => setFoto(e.target.files?.[0] || null)}
           className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-600 file:text-white hover:file:bg-green-700 cursor-pointer"
         />
