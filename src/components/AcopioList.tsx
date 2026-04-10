@@ -24,7 +24,7 @@ const centrosAcopio = [
 
 function AcopioList() {
   return (
-    <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
+    <div className="relative z-0 rounded-xl overflow-hidden shadow-lg border border-gray-200">
       <div className="bg-green-600 p-3 text-white font-bold">Puntos de Acopio Cercanos</div>
       <div style={{ height: '300px', width: '100%' }}>
         <MapContainer center={[19.4326, -99.1332]} zoom={13} scrollWheelZoom={false} style={{ height: '100%' }}>
