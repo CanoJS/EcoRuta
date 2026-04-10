@@ -7,7 +7,7 @@ type Props = {
 
 function Home({ setPage }: Props) {
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-green-100 via-green-50 to-green-200 pb-20">
+    <div className="w-full min-h-screen bg-gradient-to-r from-green-100 via-green-50 to-green-200 pb-10 pt-4">
       
       <nav className="flex justify-between items-center px-4 md:px-8 py-4 bg-white/70 backdrop-blur rounded-xl mt-4 shadow max-w-6xl w-[92%] mx-auto">
         <div className="flex items-center gap-2">
