@@ -14,11 +14,7 @@ const recompensas = [
 
 function Recompensas({ setPage, puntos, setPuntos }: Props) {
   return (
-    <div className="relative min-h-screen pb-10">
-
-  
-  <div className="fixed inset-0 -z-10 bg-gradient-to-r from-green-100 via-green-50 to-green-200" />
-
+    <div className="w-full min-h-screen bg-gradient-to-r from-green-100 via-green-50 to-green-200 pb-10">
       <Header setPage={setPage} />
 
       <main className="mt-8 md:mt-12 px-4 md:px-6">
