@@ -13,7 +13,7 @@ function Dashboard({ setPage, setPuntos, puntos }: Props) {
 
   return (
     /* Aplicamos el mismo fondo degradado que el Home */
-    <div className="w-full min-h-screen bg-fixed bg-gradient-to-r from-green-100 via-green-50 to-green-200 pb-10">
+    <div className="relative z-0w-full min-h-screen bg-fixed bg-gradient-to-r from-green-100 via-green-50 to-green-200 pb-10">
       
       {/* El Header ya debería tener la estructura del Nav del Home */}
       <Header setPage={setPage} />
