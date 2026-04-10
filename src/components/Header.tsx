@@ -6,7 +6,7 @@ type Props = {
 
 function Header({ setPage }: Props) {
   return (
-    <nav className="flex justify-between items-center px-4 md:px-8 py-4 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg max-w-5xl w-[92%] mx-auto sticky top-4 z-999 border border-white/20">
+    <nav className="flex justify-between items-center px-4 md:px-8 py-4 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg max-w-5xl w-[92%] mx-auto sticky top-4 z-1003 border border-white/20">
       {/* Logo y Nombre - Te lleva al Home al hacer clic */}
       <div 
         className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
