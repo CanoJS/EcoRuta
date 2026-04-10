@@ -1,5 +1,5 @@
 import logo from "../assets/logo.jpeg";
-import logoRec from "../assets/logo-rec.webp"; 
+import { Leaf, Award, MapPin } from "lucide-react";
 
 type Props = {
   setPage: (page: string) => void;
@@ -24,7 +24,7 @@ function Home({ setPage }: Props) {
           </button>
           <button
             onClick={() => setPage("login")}
-            className="bg-green-600 text-white px-3 md:px-4 py-1 rounded-md text-sm"
+            className="bg-green-600 text-white px-3 md:px-4 py-1 rounded-md text-sm shadow-sm"
           >
             Sign up
           </button>
@@ -52,15 +52,35 @@ function Home({ setPage }: Props) {
           >
             Comenzar gratis
           </button>
+          <button className="bg-white px-8 py-3 rounded-md border shadow-sm">
+            Ver más
+          </button>
+        </div>
+      </div>
+
+      <div className="mt-20 max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col items-center text-center">
+          <div className="bg-green-100 p-3 rounded-full text-green-600 mb-4">
+            <Leaf size={24} />
+          </div>
+          <h3 className="font-bold text-green-900 mb-2">Economía Circular</h3>
+          <p className="text-sm text-gray-600">Impulsamos un modelo que convierte los residuos en activos digitales valiosos.</p>
         </div>
 
-        {/* Imagen final logo-rec con tamaño mediano */}
-        <div className="mt-16 md:mt-15">
-          <img 
-            src={logoRec} 
-            alt="Logo Reciclaje" 
-            className="w-40 md:w-56 h-auto opacity-80 hover:opacity-100 transition-opacity duration-300" 
-          />
+        <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col items-center text-center">
+          <div className="bg-green-100 p-3 rounded-full text-green-600 mb-4">
+            <Award size={24} />
+          </div>
+          <h3 className="font-bold text-green-900 mb-2">Incentivos Reales</h3>
+          <p className="text-sm text-gray-600">Canjea tus EcoPuntos por descuentos en trámites o recargas de transporte.</p>
+        </div>
+
+        <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col items-center text-center">
+          <div className="bg-green-100 p-3 rounded-full text-green-600 mb-4">
+            <MapPin size={24} />
+          </div>
+          <h3 className="font-bold text-green-900 mb-2">Puntos Cercanos</h3>
+          <p className="text-sm text-gray-600">Localiza centros de acopio oficiales fácilmente a través de nuestra red inteligente.</p>
         </div>
       </div>
 

@@ -17,7 +17,6 @@ function ReciclajeForm({ puntos, setPuntos }: Props) {
 
     setValidando(true);
 
-    // Simulamos la validación digital y análisis de la evidencia 
     setTimeout(() => {
       setPuntos(puntos + 20);
       alert("¡Validación exitosa! Has recibido 20 EcoPuntos por tu contribución.");
@@ -33,12 +32,11 @@ function ReciclajeForm({ puntos, setPuntos }: Props) {
         Captura una foto de tus materiales en el contenedor oficial para validar tu participación.
       </p>
       
-      {/* Área de carga de evidencia fotográfica */}
       <div className="flex flex-col items-center justify-center border-2 border-dashed border-green-200 rounded-lg p-6 bg-green-50/30">
         <input 
           type="file" 
           accept="image/*" 
-          capture="environment" // Esto activa la cámara trasera en dispositivos móviles
+          capture="environment" 
           onChange={(e) => setFoto(e.target.files?.[0] || null)}
           className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-600 file:text-white hover:file:bg-green-700 cursor-pointer"
         />
