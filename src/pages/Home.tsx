@@ -53,35 +53,6 @@ function Home({ setPage }: Props) {
           </button>
         </div>
       </div>
-
-      <div className="mt-16 flex justify-center px-4 md:px-6">
-        <div className="bg-white rounded-xl shadow-xl w-full max-w-5xl p-5 md:p-8">
-          
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="font-semibold text-green-600 text-sm md:text-base">Dashboard EcoRuta</h2>
-            <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs md:text-sm font-bold">
-              120 pts
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-green-50 p-4 rounded-lg border border-green-100 flex items-center gap-3 md:flex-col md:text-center">
-              <span className="text-2xl">♻️</span>
-              <p className="text-sm font-medium text-gray-700">Reciclajes registrados</p>
-            </div>
-            <div className="bg-green-50 p-4 rounded-lg border border-green-100 flex items-center gap-3 md:flex-col md:text-center">
-              <span className="text-2xl">📍</span>
-              <p className="text-sm font-medium text-gray-700">Puntos cercanos</p>
-            </div>
-            <div className="bg-green-50 p-4 rounded-lg border border-green-100 flex items-center gap-3 md:flex-col md:text-center">
-              <span className="text-2xl">🎁</span>
-              <p className="text-sm font-medium text-gray-700">Recompensas</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
     </div>
   );
 }
