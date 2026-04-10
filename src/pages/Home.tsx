@@ -1,4 +1,5 @@
 import logo from "../assets/logo.jpeg";
+import logoRec from "../assets/logo-rec.webp"; 
 
 type Props = {
   setPage: (page: string) => void;
@@ -6,9 +7,9 @@ type Props = {
 
 function Home({ setPage }: Props) {
   return (
-    <div className="w-full min-h-screen bg-gradient-to-r from-green-100 via-green-50 to-green-200 pb-10">
+    <div className="w-full min-h-screen bg-gradient-to-r from-green-100 via-green-50 to-green-200 pb-10 pt-4">
       
-      <nav className="flex justify-between items-center px-4 md:px-8 py-4 bg-white/70 backdrop-blur rounded-xl mt-4 shadow max-w-6xl w-[92%] mx-auto">
+      <nav className="flex justify-between items-center px-4 md:px-8 py-4 bg-white/70 backdrop-blur rounded-xl shadow max-w-6xl w-[92%] mx-auto">
         <div className="flex items-center gap-2">
           <img src={logo} alt="EcoRuta" className="h-8" />
           <span className="font-bold text-lg">EcoRuta</span>
@@ -52,33 +53,14 @@ function Home({ setPage }: Props) {
             Comenzar gratis
           </button>
         </div>
-      </div>
 
-      <div className="mt-16 flex justify-center px-4 md:px-6">
-        <div className="bg-white rounded-xl shadow-xl w-full max-w-5xl p-5 md:p-8">
-          
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="font-semibold text-green-600 text-sm md:text-base">Dashboard EcoRuta</h2>
-            <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs md:text-sm font-bold">
-              120 pts
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-green-50 p-4 rounded-lg border border-green-100 flex items-center gap-3 md:flex-col md:text-center">
-              <span className="text-2xl">♻️</span>
-              <p className="text-sm font-medium text-gray-700">Reciclajes registrados</p>
-            </div>
-            <div className="bg-green-50 p-4 rounded-lg border border-green-100 flex items-center gap-3 md:flex-col md:text-center">
-              <span className="text-2xl">📍</span>
-              <p className="text-sm font-medium text-gray-700">Puntos cercanos</p>
-            </div>
-            <div className="bg-green-50 p-4 rounded-lg border border-green-100 flex items-center gap-3 md:flex-col md:text-center">
-              <span className="text-2xl">🎁</span>
-              <p className="text-sm font-medium text-gray-700">Recompensas</p>
-            </div>
-          </div>
-
+        {/* Imagen final logo-rec con tamaño mediano */}
+        <div className="mt-16 md:mt-15">
+          <img 
+            src={logoRec} 
+            alt="Logo Reciclaje" 
+            className="w-40 md:w-56 h-auto opacity-80 hover:opacity-100 transition-opacity duration-300" 
+          />
         </div>
       </div>
 
