@@ -1,4 +1,5 @@
 import logo from "../assets/logo.jpeg";
+import { Leaf, Award, MapPin } from "lucide-react";
 
 type Props = {
   setPage: (page: string) => void;
@@ -6,7 +7,7 @@ type Props = {
 
 function Home({ setPage }: Props) {
   return (
-    <div className="w-full min-h-screen bg-gradient-to-r from-green-100 via-green-50 to-green-200 pb-10">
+    <div className="w-full min-h-screen bg-gradient-to-br from-green-100 via-green-50 to-green-200 pb-20">
       
       <nav className="flex justify-between items-center px-4 md:px-8 py-4 bg-white/70 backdrop-blur rounded-xl mt-4 shadow max-w-6xl w-[92%] mx-auto">
         <div className="flex items-center gap-2">
@@ -23,7 +24,7 @@ function Home({ setPage }: Props) {
           </button>
           <button
             onClick={() => setPage("login")}
-            className="bg-green-600 text-white px-3 md:px-4 py-1 rounded-md text-sm"
+            className="bg-green-600 text-white px-3 md:px-4 py-1 rounded-md text-sm shadow-sm"
           >
             Sign up
           </button>
@@ -51,8 +52,38 @@ function Home({ setPage }: Props) {
           >
             Comenzar gratis
           </button>
+          <button className="bg-white px-8 py-3 rounded-md border shadow-sm">
+            Ver más
+          </button>
         </div>
       </div>
+
+      <div className="mt-20 max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col items-center text-center">
+          <div className="bg-green-100 p-3 rounded-full text-green-600 mb-4">
+            <Leaf size={24} />
+          </div>
+          <h3 className="font-bold text-green-900 mb-2">Economía Circular</h3>
+          <p className="text-sm text-gray-600">Impulsamos un modelo que convierte los residuos en activos digitales valiosos.</p>
+        </div>
+
+        <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col items-center text-center">
+          <div className="bg-green-100 p-3 rounded-full text-green-600 mb-4">
+            <Award size={24} />
+          </div>
+          <h3 className="font-bold text-green-900 mb-2">Incentivos Reales</h3>
+          <p className="text-sm text-gray-600">Canjea tus EcoPuntos por descuentos en trámites o recargas de transporte.</p>
+        </div>
+
+        <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col items-center text-center">
+          <div className="bg-green-100 p-3 rounded-full text-green-600 mb-4">
+            <MapPin size={24} />
+          </div>
+          <h3 className="font-bold text-green-900 mb-2">Puntos Cercanos</h3>
+          <p className="text-sm text-gray-600">Localiza centros de acopio oficiales fácilmente a través de nuestra red inteligente.</p>
+        </div>
+      </div>
+
     </div>
   );
 }
