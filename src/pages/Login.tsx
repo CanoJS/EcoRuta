@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logo from "../assets/logo.jpeg";
 
 type Props = {
@@ -5,6 +6,35 @@ type Props = {
 };
 
 function Login({ setPage }: Props) {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    if (!email || !password) {
+      setError("Todos los campos son obligatorios.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Por favor, ingresa un correo electrónico válido.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("La contraseña debe tener al menos 6 caracteres.");
+      return;
+    }
+
+    localStorage.setItem("ecoruta_user", email);
+    setPage("dashboard");
+  };
+
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-r from-green-100 via-green-50 to-green-200 py-12 px-4">
       <div className="w-full max-w-sm rounded-2xl bg-white border border-gray-200 p-6 shadow-xl">
@@ -16,13 +46,21 @@ function Login({ setPage }: Props) {
         </div>
 
         <h1 className="mb-6 text-center text-2xl font-bold text-green-800">Crear cuenta</h1>
+
+        {error && (
+          <div className="mb-4 p-3 text-xs bg-red-50 border border-red-200 text-red-600 rounded-lg">
+            {error}
+          </div>
+        )}
         
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label htmlFor="email" className="mb-1 block text-sm font-medium text-gray-600">Email</label>
             <input 
               type="email" 
               id="email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="nombre@ejemplo.com" 
               className="py-2.5 w-full rounded-lg border border-gray-300 bg-gray-50 px-3 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all" 
             />
@@ -33,6 +71,8 @@ function Login({ setPage }: Props) {
             <input 
               type="password" 
               id="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Contraseña" 
               className="py-2.5 w-full rounded-lg border border-gray-300 bg-gray-50 px-3 text-gray-700 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all" 
             />
@@ -43,7 +83,7 @@ function Login({ setPage }: Props) {
           </div>
 
           <button
-            onClick={() => setPage("dashboard")}
+            type="submit"
             className="py-2.5 font-semibold w-full rounded-lg bg-green-600 text-white transition-colors duration-300 hover:bg-green-700 shadow-md"
           >
             Registrarse
